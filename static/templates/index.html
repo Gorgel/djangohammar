@@ -21,15 +21,15 @@
                             </div>
                             {% endfor %}
                         {% endif %}
-                        
+
                         <div class="pageNav">
                              <ul>
                                  {% if news_posts.has_previous %}
                                     <li><a href="?page={{ news_posts.previous_page_number }}"><span class="glyphicon glyphicon glyphicon-arrow-left"></span>Nyare</a></li>
                                 {% endif %}
-                                 
-                                
-                                 
+
+
+
                                  <li>Sida {{ news_posts.number }} av {{ news_posts.paginator.num_pages }}</li>
 
                                  {% if news_posts.has_next %}
@@ -37,20 +37,20 @@
                                 {% endif %}
                             </ul>
                         </div>
-                        
+
                         <!-- footer-elementet längst ner i vänsterspalten -->
                         {% include "footer.html" %}
                         <!-- slut footer-elementet längst ner i vänsterspalten -->
-                        
-                    </div> 
+
+                    </div>
                 </div>
-                
+
                 <!-- kod för högerspalt -->
                 <div class="col-xs-12 col-md-4">
                     <div class="sideBar">
                         <!-- sidoartikel -->
                         <div class="sideBarItem">
-                            <h2>Senaste nytt:</h2>
+                            <h2>Senaste nytt</h2>
                             <!-- nedan länkas det till "artiklarnas ankare" -->
                             <ul>
                                 {% if news_posts %}
@@ -61,29 +61,14 @@
                             </ul>
                         </div>
                         <!-- sidoartikel slut -->
-                        
+
                         <!-- sidoartikel -->
                         <div class="sideBarItem">
-                            <h2>Felanmälan:</h2>
-                            <p>Felanmälan på vattennätet görs till vattengruppen.  <br><br>
-                            <b>Telefon : 073-829 62 75</b></p>
+                            <h2>Felanmälan</h2>
+                            <p>Felanmälan på vattennätet görs till <br><a href="kontakt#DanBjörklund">Dan Björklund</a> i vattengruppen.  <br><br>
+                            <b>Telefon : 070 520 02 66</b></p>
                         </div>
-                        
-                        <!-- sidoartikel -->
-                       <!-- <div class="sideBarItem">
-                            <h2>Gästboken.</h2>
-                            <p>Skriv gärna nått i <a href="http://www.gastbok.nu/gb/42045/">gästboken!</a></p>
-                        </div> -->
-                        <!-- sidoartikel slut -->
-                        
-                        <!-- sidoartikel -->
-                        <div class="sideBarItem">
-                            <h2>Välkommen till Strömshammar!</h2>
-                            <p>Hjärtligt välkommen  till vårt fina område! För allas trevnad ber vi boende och besökare att
-                                respektera hastighetsbegränsningen som ligger på 30 Km/h.</p>
-                        </div>
-                        <!-- sidoartikel slut-->
-                        
+
                         <!-- sidoartikel -->
                         <div class="sideBarItem">
                             <h2>Välkomstbrev</h2>

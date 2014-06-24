@@ -7,11 +7,11 @@ src: url(../fonts/Oxygen-Bold.ttf) format("opentype");
 @font-face
 {
 font-family: SourceSansPro;
-src: url(../fonts/SourceSansPro-Light.ttf) format("opentype");
+src: url(../fonts/SourceSansPro-regular.ttf) format("opentype");
 }
 
 h1 {
-font-family: oxygen;   
+font-family: oxygen;
 }
 
 h2 {
@@ -19,7 +19,7 @@ font-family: oxygen;
 }
 
 h3 {
-font-family: oxygen;   
+font-family: oxygen;
 }
 
 html, body {
@@ -61,6 +61,7 @@ overflow: auto;
     color: white;
     display: inline-block;
     font-size: 1.2em;
+    font-family: 'oxygen';
 }
 
 #linkContainer .glyphicon {

@@ -1,35 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
+
     <!-- kod för vänsterspalt -->
     <div class="container">
         <div class="row">
             <div class="col-centered">
                 <div class="col-xs-12 col-md-8">
                     <div class="newsFeed">
-                        
+
                         <div class="newsItem">
                             <h2>Allmän info om Golf</h2>
-                            <p> Det finns golf i strömshammar. Gud så fint</p>
+                            <p> Det annordnas en golftävling varje år för medlemmarna i Strömshammar. Denna tävling
+                                annordnas av</p>
+                                <a href="kontakt#HansBjörklund">Hans Björklund</a>
+                                <br>
+                                <br>
                         </div>
                         {% if golf_posts %}
                         {% for post in golf_posts %}
                         <div class="newsItem">
                             <h2>{{ post.headline }}</h2>
                             {{ post.body_text }}
-                            
+
                             {% if post.dokument %}
                             <br>
                             <br>
                              <p>Se alla resultat <a href="media/{{ post.dokument }}">här</a>.</p>
                             <br>
                             {% endif %}
-                            
+
                             <div id="wrapper">
-                            <div id="list">  
+                            <div id="list">
                                 <div class="masonryItem">
-                                    
+
                                     {% for image in golf_images %}
                                         {% if image.golf_post.headline == post.headline %}
                                   <div class="masonryItem">
@@ -37,30 +41,30 @@
                                 </div>
                                         {% endif %}
                                     {% endfor %}
-                        
+
                                 </div>
                             </div>
                             </div>
-                            
+
                             {% endfor %}
                         {% endif %}
                         </div>
-                        
-                         
+
+
 
                         <!-- footer-elementet längst ner i vänsterspalten -->
                         {% include "footer.html" %}
                         <!-- slut footer-elementet längst ner i vänsterspalten -->
-                        
+
                     </div>
                 </div>
-                
+
                 <!-- kod för högerspalt -->
                 <div class="col-xs-12 col-md-4">
                     <div class="sideBar">
-                        
+
                         <div class="sideBarItem">
-                            <h2>Golfturneringar</h2>
+                            <h2>Artiklar</h2>
                             {% for post in golf_posts_list %}
                             <ul>
                                <li><a href="golf?page={{ forloop.counter }}">{{ post.headline }}</a></li>

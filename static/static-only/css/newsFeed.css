@@ -21,18 +21,21 @@ overflow: auto;
 .newsItem h2 {
 margin:0px;
 margin-bottom: 5px;
-font-family: 'Nothing+You+Could+Do';
+font-family: 'oxygen';
 font-size: 2em;
 }
 
 .newsItem p {
 color:black;
+font-size: 1.1em;
+
 }
 
 #newsDate {
 margin:0px;
 padding-bottom: 10px;
 color:gray;
+font-family: 'oxygen';
 font-size:0.8em;
 }
 
@@ -61,7 +64,6 @@ text-decoration: none;
 }
 
 .submitItem {
-
 border-bottom-width: 1px;
 border-bottom-color: gray;
 margin-bottom:30px;
@@ -72,6 +74,7 @@ overflow: auto;
 .submitItem h2 {
 margin:0px;
 margin-bottom:20px;
+font-family: 'oxygen';
 font-size: 2em;
 }
 
@@ -109,7 +112,31 @@ padding:10px;
 }
 
 .captcha {
+    border: solid 1px #A9A9A9;
     width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#SubmittButton {
+    width: 100%;
+    border: solid 1px #A9A9A9;
+    background: #89ff89; /* Old browsers */
+background: -moz-linear-gradient(top,  #89ff89 1%, #51dd06 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#89ff89), color-stop(100%,#51dd06)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #89ff89 1%,#51dd06 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #89ff89 1%,#51dd06 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #89ff89 1%,#51dd06 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #89ff89 1%,#51dd06 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89ff89', endColorstr='#51dd06',GradientType=0 ); /* IE6-9 */
+
+}
+
+#newCaptchaButton {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
 }

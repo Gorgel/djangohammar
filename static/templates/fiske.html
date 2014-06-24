@@ -8,11 +8,9 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="newsFeed">
                         <div class="newsItem">
-                            <h2>Fiskekommittén</h2>
-                            <p>På denna sida kan man finna info om Fiskekommitténs aktiviteter.
-                            Vid Strömshammars vägförenings årsmöte 2010 beslutades att fiskekortet skall ingå i medlemsavgiften.
-                            Man skall medföra fiskekort vid fiske i våra sjöar. Ladda ned kortet från högerspalten. Fyll i tomtnummer,
-                            sedan är det bara att hoppas på god fiskelycka!</p>
+                            <h2>Allmän info om fiske</h2>
+                            <p>Varje år annordnas olika fisketävlingar i Strömshammar.</p>
+                            <p>Sedan 2010 ingår fiskekortet i årsavgiften.</p>
                             <p>Fiskekommittén består av:</p>
                             <ul>
                                 <li><p><a href='kontakt#AllanJohansson'>Allan Johansson</a></p></li>
@@ -26,18 +24,18 @@
                         <div class="newsItem">
                             <h2>{{ post.headline }}</h2>
                             {{ post.body_text }}
-                            
+
                             {% if post.dokument %}
                             <br>
                             <br>
                              <p>Se alla resultat <a href="media/{{ post.dokument }}">här</a>.</p>
                             <br>
                             {% endif %}
-                            
+
                             <div id="wrapper">
-                            <div id="list">  
+                            <div id="list">
                                 <div class="masonryItem">
-                                    
+
                                     {% for image in fiske_images %}
                                         {% if image.fiske_post.headline == post.headline %}
                                   <div class="masonryItem">
@@ -45,26 +43,26 @@
                                 </div>
                                         {% endif %}
                                     {% endfor %}
-                        
+
                                 </div>
                             </div>
                             </div>
-                            
+
                             {% endfor %}
                         {% endif %}
                         </div>
-                        
+
                         <!-- footer-elementet längst ner i vänsterspalten -->
                         {% include "footer.html" %}
                         <!-- slut footer-elementet längst ner i vänsterspalten -->
-                        
+
                     </div>
                 </div>
-                
+
                 <!-- kod för högerspalt -->
                 <div class="col-xs-12 col-md-4">
                     <div class="sideBar">
-                        
+
                         <div class="sideBarItem">
                             <h2>Artiklar</h2>
                             {% for post in fiske_posts_list %}
@@ -73,21 +71,8 @@
                             </ul>
                             {% endfor %}
                         </div>
-                        
-                        <div class="sideBarItem">
-                            <h2>Fiskekort:</h2>
-                            <p><a href="static/dokument/fiskekort2011.pdf">fiskekort2011.pdf</a></p>
-                            </div>
 
-                            <div class="sideBarItem">
-                            <h2>Pimpeltävling:</h2>
-                            <p><a href="static/dokument/Pimpel2013.pdf">pimpel2013.pdf</a></p>
-                            </div>
 
-                            <div class="sideBarItem">
-                            <h2>Gäddfestivalen 2010 Bilder & Resultat:</h2>
-                            <p><a href="static/dokument/gäddfestival.pdf">gäddfestival.pdf</a></p>
-                            </div>
                     </div>
                 </div>
             </div>
