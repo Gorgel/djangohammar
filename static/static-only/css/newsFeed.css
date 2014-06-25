@@ -103,13 +103,14 @@ display: inline;
 text-decoration: none;
 }
 
-#id_meddelande {
-    height: 200px;
-    width: 100%;
-}
 
 .pageNav {
 padding:10px;
+}
+
+#id_meddelande {
+    height: 200px;
+    width: 100%;
 }
 
 .captcha {

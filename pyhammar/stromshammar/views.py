@@ -220,6 +220,12 @@ def license_lightbox(request):
 
     return render_to_response("license_lightbox.html", context_dict, context_instance = RequestContext(request))
 
+def license_django(request):
+
+    context_dict = {}
+
+    return render_to_response("license_django.html", context_dict, context_instance = RequestContext(request))
+
 ########################################################
 #
 #

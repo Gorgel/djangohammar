@@ -69,6 +69,7 @@ border-bottom-width: 1px;
 border-bottom-color: gray;
 margin-bottom:30px;
 padding-bottom:20px;
+
 overflow: auto;
 }
 
@@ -77,6 +78,10 @@ margin:0px;
 margin-bottom:20px;
 font-family: 'oxygen';
 font-size: 2em;
+}
+
+.submitItem p {
+    padding-right: 0px;
 }
 
 .pageNav {
@@ -103,13 +108,24 @@ display: inline;
 text-decoration: none;
 }
 
+
+
+.pageNav {
+padding:10px;
+}
+
+
+#id_namn {
+width: 100%;
+}
+
 #id_meddelande {
     height: 200px;
     width: 100%;
 }
 
-.pageNav {
-padding:10px;
+#id_captcha_1 {
+   width: 100%;
 }
 
 .captcha {

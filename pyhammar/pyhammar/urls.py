@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     url(r'^forbattring', 'stromshammar.views.forbattring', name='forbattrings'),
     url(r'^license_bootstrap', 'stromshammar.views.license_bootstrap', name='license_bootstrap'),
     url(r'^license_lightbox', 'stromshammar.views.license_lightbox', name='license_lightbox'),
+    url(r'^license_django', 'stromshammar.views.license_django', name='license_django'),
 
     url(r'^wall', 'stromshammar.views.wall', name='wall'),
     url(r'^thankyou', 'stromshammar.views.thankyou', name='thankyou'),
