@@ -16,6 +16,7 @@
                                 <a href="kontakt#HansBjörklund">Hans Björklund</a>
                                 <br>
                                 <br>
+
                         </div>
                         {% if golf_posts %}
                         {% for post in golf_posts %}
@@ -45,10 +46,9 @@
                                 </div>
                             </div>
                             </div>
-
-                            {% endfor %}
-                        {% endif %}
                         </div>
+                        {% endfor %}
+                        {% endif %}
 
 
 
@@ -65,11 +65,13 @@
 
                         <div class="sideBarItem">
                             <h2>Artiklar</h2>
+                            {% if golf_posts_list %}
                             {% for post in golf_posts_list %}
                             <ul>
                                <li><a href="golf?page={{ forloop.counter }}">{{ post.headline }}</a></li>
                             </ul>
                             {% endfor %}
+                            {% endif %}
                         </div>
 
                     </div>

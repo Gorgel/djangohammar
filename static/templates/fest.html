@@ -22,6 +22,38 @@
                             </ul>
                         </div>
 
+                        {% if fest_posts %}
+                        {% for post in fest_posts %}
+                        <div class="newsItem">
+                            <h2>{{ post.headline }}</h2>
+                            {{ post.body_text }}
+
+                            {% if post.dokument %}
+                            <br>
+                            <br>
+                             <p>Se alla resultat <a href="media/{{ post.dokument }}">här</a>.</p>
+                            <br>
+                            {% endif %}
+
+                            <div id="wrapper">
+                            <div id="list">
+                                <div class="masonryItem">
+
+                                    {% for image in fiske_images %}
+                                        {% if image.fiske_post.headline == post.headline %}
+                                  <div class="masonryItem">
+                                    <a href="media/bilder/festbilder/{{ image.filename }}" data-lightbox="masonryImage" data-title="{{ image.caption }}"><img class="masonryImage" src="media/bilder/festbilder/{{ image.filename }}"></a>
+                                </div>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+
                         <!-- footer-elementet längst ner i vänsterspalten -->
                             {% include "footer.html" %}
                         <!-- slut footer-elementet längst ner i vänsterspalten -->
@@ -32,9 +64,18 @@
                 <!-- kod för högerspalt -->
                 <div class="col-xs-12 col-md-4">
                     <div class="sideBar">
+
                         <div class="sideBarItem">
-                            <h2>Festgrunkor:</h2>
+                            <h2>Artiklar</h2>
+                            {% if fest_posts_list %}
+                            {% for post in fest_posts_list %}
+                            <ul>
+                               <li><a href="fest?page={{ forloop.counter }}">{{ post.headline }}</a></li>
+                            </ul>
+                            {% endfor %}
+                            {% endif %}
                         </div>
+
                     </div>
                 </div>
             </div>

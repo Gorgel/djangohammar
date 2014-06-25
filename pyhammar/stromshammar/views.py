@@ -1,7 +1,7 @@
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 from django.contrib import messages
 from .forms import CaptchaWallForm
-from models import WallPost, NewsPost, GolfPost, GolfImage, FAQPost, GalleryImage, FiskeImage, FiskePost
+from models import WallPost, NewsPost, GolfPost, GolfImage, FAQPost, GalleryImage, FiskeImage, FiskePost, FestImage, FestPost, BouleImage, BoulePost
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
@@ -85,13 +85,41 @@ def lagindelning(request):
 
 def boule(request):
 
-    context_dict = {}
+    boule_posts_list = BoulePost.objects.all().order_by('-pub_date')
+    boule_posts = BoulePost.objects.all().order_by('-pub_date')
+    boule_images = BouleImage.objects.all()
+    paginator = Paginator(boule_posts, 1)
+
+
+    bpost = request.GET.get('page')
+    try:
+        boule_posts = paginator.page(bpost)
+    except PageNotAnInteger:
+        boule_posts = paginator.page(1)
+    except EmptyPage:
+        boule_posts = paginator.page(paginator.num_pages)
+
+    context_dict = { 'boule_images' : boule_images, 'boule_posts' : boule_posts, 'boule_posts_list' : boule_posts_list}
 
     return render_to_response("boule.html", context_dict, context_instance = RequestContext(request))
 
 def fest(request):
 
-    context_dict = {}
+    fest_posts_list = FestPost.objects.all().order_by('-pub_date')
+    fest_posts = FestPost.objects.all().order_by('-pub_date')
+    fest_images = FestImage.objects.all()
+    paginator = Paginator(fest_posts, 1)
+
+
+    fepost = request.GET.get('page')
+    try:
+        fest_posts = paginator.page(fepost)
+    except PageNotAnInteger:
+        fest_posts = paginator.page(1)
+    except EmptyPage:
+        fest_posts = paginator.page(paginator.num_pages)
+
+    context_dict = { 'fest_images' : fest_images, 'fest_posts' : fest_posts, 'fest_posts_list' : fest_posts_list}
 
     return render_to_response("fest.html", context_dict, context_instance = RequestContext(request))
 

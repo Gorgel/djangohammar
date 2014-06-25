@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import WallPost, NewsPost, GolfImage, GolfPost, FAQPost, GalleryImage, FiskeImage, FiskePost
+from .models import WallPost, NewsPost, GolfImage, GolfPost, FAQPost, GalleryImage, FiskeImage, FiskePost, FestImage, FestPost, BouleImage, BoulePost
 
 class WallPostAdmin(admin.ModelAdmin):
     list_display = ('namn', 'timestamp', 'meddelande')
@@ -39,6 +39,31 @@ class FiskePostAdmin(admin.ModelAdmin):
     class Meta:
         model = FiskePost
 
+class FestImageAdmin(admin.ModelAdmin):
+    list_display = ('caption', 'fest_post')
+
+    class Meta:
+        model = FestImage
+
+class FestPostAdmin(admin.ModelAdmin):
+    list_display = ('headline', 'pub_date','body_text',)
+
+    class Meta:
+        model = FestPost
+
+class BouleImageAdmin(admin.ModelAdmin):
+    list_display = ('caption', 'boule_post')
+
+    class Meta:
+        model = BouleImage
+
+class BoulePostAdmin(admin.ModelAdmin):
+    list_display = ('headline', 'pub_date','body_text',)
+
+    class Meta:
+        model = BoulePost
+
+
 class FAQPostAdmin(admin.ModelAdmin):
     list_display = ('question', 'answer')
 
@@ -56,3 +81,7 @@ admin.site.register(FAQPost, FAQPostAdmin)
 admin.site.register(GalleryImage, GalleryImageAdmin)
 admin.site.register(FiskeImage, FiskeImageAdmin)
 admin.site.register(FiskePost, FiskePostAdmin)
+admin.site.register(FestImage, FestImageAdmin)
+admin.site.register(FestPost, FestPostAdmin)
+admin.site.register(BouleImage, BouleImageAdmin)
+admin.site.register(BoulePost, BoulePostAdmin)

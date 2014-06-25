@@ -21,7 +21,7 @@ class NewsPost(models.Model):
 
 class GolfPost(models.Model):
     headline = models.CharField(max_length=120, null=False, blank=False)
-    pub_date = models.DateField()
+    pub_date = models.DateTimeField(auto_now_add=True, auto_now=False)
     body_text = models.TextField(max_length=1024, null=False, blank=False)
     dokument = models.FileField(upload_to='dokument/golf', null=True, blank=True)
 
@@ -42,7 +42,7 @@ class GolfImage(models.Model):
 
 class FiskePost(models.Model):
     headline = models.CharField(max_length=120, null=False, blank=False)
-    pub_date = models.DateField()
+    pub_date = models.DateTimeField(auto_now_add=True, auto_now=False)
     body_text = models.TextField(max_length=1024, null=False, blank=False)
     dokument = models.FileField(upload_to='dokument/fiske', null=True, blank=True)
 
@@ -57,6 +57,48 @@ class FiskeImage(models.Model):
     filename = models.CharField(max_length=120, null=False, blank=False)
     caption = models.CharField(max_length=120, null=False, blank=False)
     fiske_post = models.ForeignKey(FiskePost)
+
+    def __unicode__(self):
+        return smart_unicode(self.filename)
+
+class FestPost(models.Model):
+    headline = models.CharField(max_length=120, null=False, blank=False)
+    pub_date = models.DateTimeField(auto_now_add=True, auto_now=False)
+    body_text = models.TextField(max_length=1024, null=False, blank=False)
+    dokument = models.FileField(upload_to='dokument/fest', null=True, blank=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.headline)
+
+    class Meta:
+        ordering = ('headline',)
+
+class FestImage(models.Model):
+    image = models.ImageField(upload_to='bilder/festbilder')
+    filename = models.CharField(max_length=120, null=False, blank=False)
+    caption = models.CharField(max_length=120, null=False, blank=False)
+    fest_post = models.ForeignKey(FestPost)
+
+    def __unicode__(self):
+        return smart_unicode(self.filename)
+
+class BoulePost(models.Model):
+    headline = models.CharField(max_length=120, null=False, blank=False)
+    pub_date = models.DateTimeField(auto_now_add=True, auto_now=False)
+    body_text = models.TextField(max_length=1024, null=False, blank=False)
+    dokument = models.FileField(upload_to='dokument/boule', null=True, blank=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.headline)
+
+    class Meta:
+        ordering = ('headline',)
+
+class BouleImage(models.Model):
+    image = models.ImageField(upload_to='bilder/boulebilder')
+    filename = models.CharField(max_length=120, null=False, blank=False)
+    caption = models.CharField(max_length=120, null=False, blank=False)
+    boule_post = models.ForeignKey(BoulePost)
 
     def __unicode__(self):
         return smart_unicode(self.filename)

@@ -9,7 +9,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="newsFeed">
                         <div class="newsItem">
-                            <h2>Boule i Strömshammar</h2>
+                            <h2>Allmän info om Boule</h2>
                             <p>Strömshammar har en egen boulebana och är är belägen invid Henaren, strax ovan festplatsen. </p>
                             <br>
                             <br>
@@ -34,6 +34,38 @@
                             </div>
                         </div>
 
+                        {% if boule_posts %}
+                        {% for post in boule_posts %}
+                        <div class="newsItem">
+                            <h2>{{ post.headline }}</h2>
+                            {{ post.body_text }}
+
+                            {% if post.dokument %}
+                            <br>
+                            <br>
+                             <p>Se alla resultat <a href="media/{{ post.dokument }}">här</a>.</p>
+                            <br>
+                            {% endif %}
+
+                            <div id="wrapper">
+                            <div id="list">
+                                <div class="masonryItem">
+
+                                    {% for image in boule_images %}
+                                        {% if image.boule_post.headline == post.headline %}
+                                  <div class="masonryItem">
+                                    <a href="media/bilder/boulebilder/{{ image.filename }}" data-lightbox="masonryImage" data-title="{{ image.caption }}"><img class="masonryImage" src="media/bilder/boulebilder/{{ image.filename }}"></a>
+                                </div>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+
                         <!-- footer-elementet längst ner i vänsterspalten -->
                         {% include "footer.html" %}
                         <!-- slut footer-elementet längst ner i vänsterspalten -->
@@ -50,6 +82,18 @@
                                     <a href="static/bilder/boulekarta.png" data-lightbox="masonryImage" data-title="My"><img class="masonryImage" src="static/bilder/boulekarta.png"></a>
                                 </div>
                         </div>
+
+                        <div class="sideBarItem">
+                            <h2>Artiklar</h2>
+                            {% if boule_posts_list %}
+                            {% for post in boule_posts_list %}
+                            <ul>
+                               <li><a href="boule?page={{ forloop.counter }}">{{ post.headline }}</a></li>
+                            </ul>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+
                     </div>
                 </div>
             </div>
