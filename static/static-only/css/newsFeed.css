@@ -61,6 +61,7 @@ display: inline;
 .footerItem ul li a {
 padding: 2px 12px;
 text-decoration: none;
+font-size: 0.8em;
 }
 
 .submitItem {
