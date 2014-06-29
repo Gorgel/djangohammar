@@ -39,8 +39,8 @@
                             <div id="list">
                                 <div class="masonryItem">
 
-                                    {% for image in fiske_images %}
-                                        {% if image.fiske_post.headline == post.headline %}
+                                    {% for image in fest_images %}
+                                        {% if image.fest_post.headline == post.headline %}
                                   <div class="masonryItem">
                                     <a href="media/bilder/festbilder/{{ image.filename }}" data-lightbox="masonryImage" data-title="{{ image.caption }}"><img class="masonryImage" src="media/bilder/festbilder/{{ image.filename }}"></a>
                                 </div>
