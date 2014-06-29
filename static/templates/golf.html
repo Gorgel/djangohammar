@@ -22,14 +22,7 @@
                         {% for post in golf_posts %}
                         <div class="newsItem">
                             <h2>{{ post.headline }}</h2>
-                            {{ post.body_text }}
-
-                            {% if post.dokument %}
-                            <br>
-                            <br>
-                             <p>Se alla resultat <a href="media/{{ post.dokument }}">här</a>.</p>
-                            <br>
-                            {% endif %}
+                            {{ post.body_text|safe }}
 
                             <div id="wrapper">
                             <div id="list">

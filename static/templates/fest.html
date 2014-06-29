@@ -26,7 +26,7 @@
                         {% for post in fest_posts %}
                         <div class="newsItem">
                             <h2>{{ post.headline }}</h2>
-                            {{ post.body_text }}
+                            {{ post.body_text|safe }}
 
                             {% if post.dokument %}
                             <br>
