@@ -39,13 +39,7 @@ font-family: 'oxygen';
 font-size:0.8em;
 }
 
-.footItem {
-    width:600px;
-    background: yellow;
-    margin: 0 auto;
-    padding: 20px;
-    overflow: auto;
-}
+
 
 .footerItem ul {
     text-align: center;
@@ -59,9 +53,9 @@ display: inline;
 }
 
 .footerItem ul li a {
-padding: 2px 12px;
+padding: 2px 2px;
 text-decoration: none;
-font-size: 0.8em;
+font-size: 1em;
 }
 
 .submitItem {

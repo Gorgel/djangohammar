@@ -25,13 +25,6 @@
                             <h2>{{ post.headline }}</h2>
                             {{ post.body_text|safe }}
 
-                            {% if post.dokument %}
-                            <br>
-                            <br>
-                             <p>Se alla resultat <a href="media/{{ post.dokument }}">här</a>.</p>
-                            <br>
-                            {% endif %}
-
                             <div id="wrapper">
                             <div id="list">
                                 <div class="masonryItem">

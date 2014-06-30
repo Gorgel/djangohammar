@@ -68,7 +68,21 @@
 
                                         {% csrf_token %}
 
-                                        {{ form.as_p }}
+                                        {{ form.non_field_errors }}
+
+                                            <p>{{ form.namn.errors }}</p>
+                                            <label for="id_namn">Rubrik</label>
+                                            {{ form.namn }}
+
+
+                                            <p>{{ form.meddelande.errors }}</p>
+                                            <label for="id_meddelande">Meddelande</label>
+                                            <p>{{ form.meddelande }}</p>
+
+
+                                            <p>{{ form.captcha.errors }}</p>
+
+                                           <p> {{ form.captcha }}</p>
 
                                         <button id="newCaptchaButton" href="#void" class="captcha-refresh">Ny bild</button>
                                         <p>Skriv in symbolerna från bilden in i textrutan nedanför och tryck sedan på skicka för att
