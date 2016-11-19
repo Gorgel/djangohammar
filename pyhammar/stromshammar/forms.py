@@ -13,3 +13,4 @@ class CaptchaWallForm(forms.ModelForm):
     class Meta:
         model = WallPost
 
+

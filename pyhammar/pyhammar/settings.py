@@ -21,7 +21,7 @@ DEFAULT_CHARSET = 'utf-8'
 SECRET_KEY = '92lr(&n(knrr&r$hky2lpa)xa3_dr89a287yg5&yhjo9-#hk_3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -89,7 +89,7 @@ TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
 )
 
-if DEBUG:
+if not DEBUG:
     MEDIA_URL = '/media/'
     STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only")
     MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static","media")
